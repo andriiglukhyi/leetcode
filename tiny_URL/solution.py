@@ -9,6 +9,8 @@ class Codec:
         :type longUrl: str
         :rtype: str
         """
+        if len(longUrl) == 0:
+            return False
         hash = sha256(longUrl.encode()).hexdigest()[:5]
         self.dict[hash] = longUrl
         return hash
