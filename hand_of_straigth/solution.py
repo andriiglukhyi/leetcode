@@ -5,27 +5,21 @@ class Solution:
         :type W: int
         :rtype: bool
         """
-        if len(hand)<W or len(hand) == 0:
-            return False
-        hand = sorted(set(hand))
-        groups = []
-        for item in range(len(hand)):
-            j = item
-            flag = True
-            counter = 1
-            if j+W > len(hand):
-                break
-            while counter < W and flag:
-                if hand[j]==hand[j+1] -1:
-                    print(hand[j])
-                    j += 1 
-                    counter += 1
-                else:
-                    flag = False
-            if flag:
-                groups.append(hand[item:j+1])
-        print(len(groups), W)
-        if len(groups) >= W:
+        if W == 1:
             return True
-        return False
+        if len(hand) % W:
+            return False
+        cnt = collections.Counter(hand)
+        while cnt:
+            start = min(cnt)
+            cnt[start] -= 1
+            if cnt[start] == 0:
+                del cnt[start]
+            for i in range(1, W):
+                if start + i not in cnt:
+                    return False
+                cnt[start+i] -= 1
+                if cnt[start+i] == 0:
+                    del cnt[start+i]
+        return True
                 
