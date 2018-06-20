@@ -5,9 +5,8 @@ class LRUCache:
         :type capacity: int
         """
         self.capacity = capacity
-        self.counter = 0
-        self.bucket = {}
-        self.last = None
+        self.cache = []
+        self.dict = {}
         
 
     def get(self, key):
@@ -16,7 +15,11 @@ class LRUCache:
         :rtype: int
         """
         try:
-            return self.bucket[key]
+            self.dict[key]
+            self.cache.append(key)
+            if len(self.cache) > self.capacity:
+                self.cache = self.cache[1:]
+            return self.dict[key]
         except KeyError:
             return -1
 
@@ -26,17 +29,16 @@ class LRUCache:
         :type value: int
         :rtype: void
         """
-        lst = list(self.bucket.keys())
-        if self.counter + 1 > self.capacity:
-            del self.bucket[lst[0]]            
-        self.bucket[key] = value
-        self.last = key
-        print(  self.bucket)
-
-        
-
-
-# Your LRUCache object will be instantiated and called as such:
-# obj = LRUCache(capacity)
-# param_1 = obj.get(key)
-# obj.put(key,value)
+        try:
+            self.dict[key]
+            self.dict[key] = value
+            self.cache.append(key)
+            if len(self.cache) > self.capacity:
+                del self.dict[key]
+                self.cache = self.cache[1:]
+        except KeyError:
+            self.dict[key] = value
+            self.cache.append(key)
+            if len(self.cache) > self.capacity:
+                del self.dict[key]
+                self.cache = self.cache[1:]
