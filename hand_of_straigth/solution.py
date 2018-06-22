@@ -5,11 +5,16 @@ class Solution:
         :type W: int
         :rtype: bool
         """
-        if W == 1:
+        if W == 1 and len(hand) > 0:
             return True
         if len(hand) % W:
             return False
-        cnt = collections.Counter(hand)
+        cnt = {}
+        for item in hand:
+            try:
+                cnt[item] += 1
+            except KeyError:
+                cnt[item] = 1
         while cnt:
             start = min(cnt)
             cnt[start] -= 1
@@ -22,4 +27,3 @@ class Solution:
                 if cnt[start+i] == 0:
                     del cnt[start+i]
         return True
-                
