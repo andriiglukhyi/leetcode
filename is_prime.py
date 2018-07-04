@@ -8,6 +8,3 @@ def countPrimes(n):
             for j in range(i, (n-1)//i+1):
                 res[i*j] = False
     return sum(res)
-
-
-    
