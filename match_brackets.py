@@ -10,7 +10,6 @@ def isValid(s):
     if len(s) == 1:
         return False
     a = []
-    import pdb; pdb.set_trace()
     for item in s:
         print(s, item)
         if item in opn:
