@@ -1,20 +1,16 @@
-class Solution:
-    def longestCommonPrefix(self, strs):
+def longestCommonPrefix(strs):
         """
         :type strs: List[str]
         :rtype: str
         """
-        if strs == []:
+        if not strs:
             return ""
-        
-        min_length = min([len(s) for s in strs])
-        if min_length == 0:
-            return ""
-        
-        for i in range(min_length):
-            check = ([s[i] for s in strs])
-            if check.count(check[0]) != len(check):
-                return  strs[0][0:i]
-        
-        return strs[0][0:min_length]
-        
+            
+        for i, letter_group in enumerate(zip(*strs)):
+            if len(set(letter_group)) > 1:
+                return strs[0][:i]
+        return min(strs)
+arr = ['newligth' for x in range(300)]
+arr[-2] = "newligghhgh"
+print(arr)
+print(longestCommonPrefix(arr))
