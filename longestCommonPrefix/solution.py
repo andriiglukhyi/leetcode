@@ -5,12 +5,12 @@ def longestCommonPrefix(strs):
         """
         if not strs:
             return ""
-            
-        for i, letter_group in enumerate(zip(*strs)):
+        temp = enumerate(zip(*strs))
+        print(list(temp))
+        for i, letter_group in temp:
             if len(set(letter_group)) > 1:
                 return strs[0][:i]
         return min(strs)
-arr = ['newligth' for x in range(300)]
-arr[-2] = "newligghhgh"
+arr =  ["flower","flow","flight"]
 print(arr)
 print(longestCommonPrefix(arr))
