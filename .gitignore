@@ -1,3 +1,29 @@
+
+# Created by https://www.gitignore.io/api/code,linux,python
+
+### Code ###
+# Visual Studio Code - https://code.visualstudio.com/
+.settings/
+.vscode/
+tsconfig.json
+jsconfig.json
+
+### Linux ###
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+### Python ###
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -102,3 +128,9 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+### Python Patch ###
+.venv/
+
+
+# End of https://www.gitignore.io/api/code,linux,python

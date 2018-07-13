@@ -20,7 +20,7 @@ class Solution:
         def foo(r, l, target):
             if r > l:
                 return 
-            midle = r+l//2
+            midle = (r+l)//2
             if nums[midle] == target:
                 if nums[midle-1] == nums[midle] == nums[midle+1]:
                     return [sub_foo(r, midle, target), sub_foo(midle, l, target)]
