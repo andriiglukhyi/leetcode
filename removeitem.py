@@ -22,8 +22,4 @@ def dif(s, d):
                 match = word
             
     print(match) 
-        
-
-
-dif(s, d)
              
