@@ -12,16 +12,18 @@ class Solution:
             print(i, j, number)
             print(height[i], height[j])
             counter = 0
-            while i >= 0 or j <= len(height)-1:
+            while i == 0 or j == len(height):
                 if i >= 0:
                     if height[i]>= height[number]:
                         counter += 1
-                if j <= len(height)-1:
+                        if i > 0:
+                            i -= 1
+                if j <= len(height):
                     if height[j]>= height[number]:
                         counter += 1
-                i -= 1
-                j += 1
-            if (counter + 1)*height[number] > mx:
-                mx = (counter + 1)*height[number]
+                        if j < len(height):
+                            j += 1
+            if (counter - 1)*height[number] > mx:
+                mx = (counter -1)*height[number]
                 end = [i, j]
         return mx
