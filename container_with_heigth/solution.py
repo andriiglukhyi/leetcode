@@ -19,7 +19,7 @@ class Solution:
                 if j <= len(height)-1:
                     if height[j]>= height[number]:
                         counter += 1
-                i += 1
+                i -= 1
                 j += 1
             if (counter + 1)*height[number] > mx:
                 mx = (counter + 1)*height[number]
