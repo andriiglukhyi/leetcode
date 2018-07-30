@@ -11,12 +11,12 @@ class Solution(object):
         :type root: TreeNode
         :rtype: int
         """
-        end = []
+        seq_of_left = []
         level = Queue()
         next_level = Queue()
-        end.append([root.val])
+        seq_of_left.append([root.val])
         if root.left:
-            end.append([root.left.val])
+            seq_of_left.append([root.left.val])
             level.put(root.left)
         if root.right:
             level.put(root.right)
@@ -32,8 +32,7 @@ class Solution(object):
                 cur = level.get()
                 print(cur.val)
             if len(lefts) > 0:
-                end.append(lefts)
-            print(dir(level))
+                seq_of_left.append(lefts)
             level, next_level = next_level, level
         while not level.empty():
             _swap(level, next_level)
