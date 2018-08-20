@@ -15,6 +15,7 @@ class Solution(object):
             cur = dict[nums[item]]
             if nums[item] + 1 in dict:
                 cur += dict[nums[item]+1]
-            if cur > longest:
-                longest = cur
+                if cur > longest:
+                    longest = cur
         return longest
+                
