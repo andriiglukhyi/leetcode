@@ -28,7 +28,7 @@ class MagicDictionary:
         """
         counter = 0
         return self.find_possability(self.root, word, counter)
-    def insert_item(root, str):
+    def insert_item(self, root, str):
         """
         recursevly go down and build try tree
         """
@@ -52,12 +52,10 @@ class MagicDictionary:
                 find_possible(root.children[item], str[1:], c)
             else:
                 return False
-                
-        
-        
-        
-        
+dct = MagicDictionary()
+dct.buildDict(["hello", "leetcode"])
 
+print(dct.buildDict('hello'))
 
 # Your MagicDictionary object will be instantiated and called as such:
 # obj = MagicDictionary()
