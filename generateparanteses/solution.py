@@ -15,4 +15,8 @@ class Solution:
                     foo(l, r-1, path+')')
         res = []
         foo(n-1, n, "(")
+        print(res)
         return res
+
+ne = Solution()
+ne.generateParenthesis(10)
