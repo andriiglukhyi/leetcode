@@ -14,10 +14,10 @@ def lbs(arr):
  
     # allocate memory for LIS[] and initialize LIS values as 1
     # for minus
-    lis = [0 for i in range(n)-2]
+    lis = [0 for i in range(n-2)]
  
     # Compute LIS values from left to right
-    for i in range(0 , n-1):
+    for i in range(0 , n-2):
         if arr[i] > arr[i+1]:
             lis[i] = 1
         else:
@@ -30,7 +30,7 @@ def lbs(arr):
     # Compute LDS values from right to left
     counter = 0
     for i in range(len(lis)):
-        if arr[i] == ar[i+1]:
+        if arr[i] == arr[i+1]:
             counter += 1
         else:
             ans.append(counter + 1)
@@ -43,6 +43,5 @@ def lbs(arr):
      
     return biggest
 # Driver program to test the above function
-arr =  [0 , 8 , 4, 12, 2, 10 , 6 , 14 , 1 , 9 , 5 , 13,
-        3, 11 , 7 , 15]
-lbs(arr)
+arr =  [1,2,3,4,5,4,3,4,5,6,7,2,1,0]
+print(lbs(arr))
