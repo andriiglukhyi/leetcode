@@ -13,7 +13,7 @@ INF = 99999
 def negCyclefloydWarshall(graph):
     # dist[][] will be the output matrix that will 
     # finally have the shortest distances between every pair of vertices
-    dist=[[0 for i in range(V+1)]for j in range(V+1)]
+    dist=[[0 for i in range(V)]for j in range(V)]
     # Initialize the solution matrix same as input
     # graph matrix. Or we can say the initial values 
     # of shortest distances are based on shortest 
@@ -21,7 +21,8 @@ def negCyclefloydWarshall(graph):
     for i in range(4):
         for j in range(V):
             dist[i][j] = graph[i][j]
-            # print(dist[i][j])
+    for item in dist:
+        print(item)
     """ Add all vertices one by one to the set of 
         intermediate vertices.
     ---> Before start of a iteration,
@@ -42,9 +43,13 @@ def negCyclefloydWarshall(graph):
                 # i to j, then update the value of dist[i][j]
                 if (dist[i][k] + dist[k][j]) < dist[i][j]:
                     dist[i][j] = dist[i][k] + dist[k][j]
+                    # print(dist[i][j])
+                    # print(dist)
                     # print('changed', dist[i][k])
     # If distance of any vertex from itself
     # becomes negative, then there is a negative weight cycle.
+    for item in dist:
+        print(item)
     for i in range(V):
         if (dist[i][i] < 0):
             return True
