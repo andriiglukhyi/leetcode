@@ -24,11 +24,7 @@ class Solution(object):
                     if j-1 >= 0:
                         if grid[i][j-1] == 0:
                             stripes += 1
-                    # elif j == 0:
-                    #     stripes += 1
                     if j+1 <= len(grid[0])-1:
                         if grid[i][j+1] == 0:
                             stripes += 1
-                    # elif j == len(grid[0]):
-                    #     stripes += 1
         return stripes

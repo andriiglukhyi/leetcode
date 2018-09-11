@@ -10,11 +10,11 @@ class Solution:
                 return
             if r >= l:
                 if l != 0:
-                    foo(l-1, r, path+'(')
+                    foo(l-1, r, path+'{')
                 if r != 0:
-                    foo(l, r-1, path+')')
+                    foo(l, r-1, path+'}')
         res = []
-        foo(n-1, n, "(")
+        foo(n-1, n, "{")
         print(res)
         return res
 
