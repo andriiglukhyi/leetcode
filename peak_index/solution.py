@@ -5,7 +5,6 @@ class Solution:
         :rtype: int
         """
         for item in range(len(A)):
-            print(item)
             if A[item]>A[item+1] and A[item] > A[item-1]:
                 return item
             
