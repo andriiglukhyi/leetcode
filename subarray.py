@@ -8,4 +8,4 @@ def max_sub_array_sum(a):
          
     print(max_so_far)
 
-maxSubArraySum([-2, -3, 4, -1, -2, 1, 5, -3])
+max_sub_array_sum([-2, -3, 4, -1, -2, 1, 5, -3])
