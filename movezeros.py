@@ -1,8 +1,8 @@
 # Function which pushes all
 # zeros to end of an array.
-def pushZerosToEnd(arr, n):
+def pushZerosToEnd(arr):
     count = 0 # Count of non-zero elements
-     
+    n = len(arr)
     # Traverse the array. If element 
     # encountered is non-zero, then
     # replace the element at index
@@ -11,8 +11,6 @@ def pushZerosToEnd(arr, n):
         if arr[i] != 0:             
             # here count is incremented
             arr[count] = arr[i]
-            print(arr)
-
             count+=1
      
     # Now all non-zero elements have been
@@ -20,9 +18,8 @@ def pushZerosToEnd(arr, n):
     # as index of first 0. Make all 
     # elements 0 from count to end.
     while count < n:
-        print(arr)
         arr[count] = 0
         count += 1
-    print(arr)
+    return arr
 
-pushZerosToEnd([0,1,2,3,4,0,3,4], 8)
+print(pushZerosToEnd([0,0]))
