@@ -64,13 +64,13 @@ class Solution:
         return list(end_words)
 
 
-Input: 
-words = ["oath","pea","eat","rain"] and board =
-[
-  ['o','a','a','n'],
-  ['e','t','a','e'],
-  ['i','h','k','r'],
-  ['i','f','l','v']
-]
+# Input: 
+# words = ["oath","pea","eat","rain"] and board =
+# [
+#   ['o','a','a','n'],
+#   ['e','t','a','e'],
+#   ['i','h','k','r'],
+#   ['i','f','l','v']
+# ]
 
-Output: ["eat","oath"]
+# Output: ["eat","oath"]
